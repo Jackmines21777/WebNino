@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    background: url("/assets/FE.jpg"),url("/assets/l.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+}
