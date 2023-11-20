@@ -8,8 +8,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.contendor{
+.contenedor{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
 }
 
 .contenedor .centrar .medio p{
@@ -18,6 +21,11 @@
 
 #h2 {
     color: #fff;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    
 }
 .nono {
     display: flex;
@@ -26,6 +34,8 @@
 
 .centrar {
     display: flex;
+    padding: 50px;
+    height: 100%;
 }
 
 .centrar .medio p{
@@ -60,18 +70,19 @@
 }
 
 #numeros .card{
-
-    margin: 5px;
+    user-select: none;
+    /* margin: 5px; */
+    flex: 1 1 auto;
     /* position: absolute; */
-    width: 2.25em;
-    height: 30vh;
+    /* width: 70px; */
+    height: 70px;
     border-radius: 8px;
     background: #5e5cfc;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgba(0,0,0,0.2);
-    font-size: 8em;
+    font-size: 4rem;
     font-weight: 700;
     border: 10px solid rgba(0,0,0,0.1);
     cursor: pointer;
@@ -79,6 +90,7 @@
     transform-origin: 50% 100%;
     filter: hue-rotate(calc(var(--i) * 50deg));
     box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    padding: 35px;
 }
 
 /* #numeros:hover .card{
@@ -87,9 +99,10 @@
     box-shadow: 0 15px 50px rgba(0,0,0,0.25);
 } */
 
-#numeros:hover .card:hover{
-    width: 2.75em;
-    height: 32vh;
+#numeros .card:hover{
+    /* width: 2.75em; */
+    /* height: 32vh; */
+    transform: scale(1.1);
     z-index: 1000;
     background: #f43648;
 }
@@ -97,8 +110,14 @@
 #numeros{
     position: relative;
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
+    flex-wrap: wrap; */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 15px
 }
 
 /* #numeros .numero{
@@ -109,6 +128,7 @@
 .container {
     position: relative;
     width: 800px;
+
     height: 40vh;
     /* background: rgba(0,0,0,0.125); */
     display: flex;
@@ -244,7 +264,4 @@
     color: #333;
     letter-spacing: 0.05em;
     font-size: 0.8em;
-} 
-
-
-
+}

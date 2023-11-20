@@ -1,38 +1,54 @@
 <div class="container body" #body>
-    <div class="box signin">
-        <h2>¿Ya tienes una cuenta?</h2>
-            <button  class="signinBtn" (click)="iniciarSession()">Iniciar Sesión</button>
-    </div>
-
-    <div class="box signup">
-        <h2>¿Todavía no tienes una cuenta?</h2>
-            <button class="signupBtn" (click)="registrarSession()">Registrar</button>
-    </div>
-
-    <div class="formBx">
-        <div class="form signinform">
-            <form>
-                <h3>Iniciar Sesión</h3>
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <input type="submit" value="Login">
-                <a href="#" clas="forgot"> Olvidé contraseña</a>
-            </form>
-        </div>
-        <div class="form signupform">
-            <form>
-                <h3>Registrar</h3>
-                <input type="text" placeholder="Username">
-                <input type="text" placeholder="Email Address">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm">
-                <input type="submit" value="Registrar">
-                
-            </form>
+    <div class="mitad izquierda">
+        <div class="box signin">
+            <h2>¿Ya tienes una cuenta?</h2>
+                <button  class="signinBtn" (click)="iniciarSession()">Iniciar Sesión</button>
         </div>
 
+        <div class="box signup">
+            <h2>¿Todavía no tienes una cuenta?</h2>
+                <button class="signupBtn" (click)="registrarSession()">Registrar</button>
+        </div>
+
+        <div class="formBx">
+            <div class="form signinform">
+                <form>
+                    <h3>Iniciar Sesión</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <input type="submit" value="Login">
+                    <a href="#" clas="forgot"> Olvidé contraseña</a>
+                </form>
+            </div>
+            <div class="form signupform">
+                <form>
+                    <h3>Registrar</h3>
+                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Email Address">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm">
+                    <input type="submit" value="Registrar">
+                    
+                </form>
+            </div>
+
+        </div>
     </div>
 
+    <div class="mitad derecha">
+        <div class="fondo">
+            <div class="cube">
+            <div class="top"></div>
+            <div>
+                <span style="--i:0;"></span>
+                <span style="--i:1;"></span>
+                <span style="--i:2;"></span>
+                <span style="--i:3;"></span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
     
 </div>
 

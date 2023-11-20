@@ -24,6 +24,8 @@ import { NivelDificilComponent } from './nivel-dificil/nivel-dificil.component';
 import { SumaComponent } from './suma/suma.component';
 import { NAleatorioComponent } from './n-aleatorio/n-aleatorio.component';
 import { NivelFinalComponent } from './nivel-final/nivel-final.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './_material/material/material.module';
 
 
 
@@ -55,7 +57,9 @@ import { NivelFinalComponent } from './nivel-final/nivel-final.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BarritaComponent
+    BarritaComponent,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

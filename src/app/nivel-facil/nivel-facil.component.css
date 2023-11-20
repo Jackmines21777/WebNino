@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     background: #121212;
+    /* height: 500vh; */
 }
 
 .container{
@@ -12,7 +13,7 @@
     align-items: center;
     gap: 200px;
     flex-wrap: wrap;
-    height: 89.5vh;
+    height: 100vh;
 }
 
 .container .box{
@@ -112,17 +113,19 @@
     display: flex;
     justify-content: center;
     gap: 25px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
 }
 
 .container .box ul a{
     color: #fff8;
-    font-size: 2em;
+    font-size: 30px;
     scale: 0;
     transition: 0.25s;
     transition-delay: scale calc(0.2s * var(--i));
     
 }
-
 .container .box:hover ul a{
     scale:1;
 }
@@ -131,3 +134,97 @@
     color: #fff;
 }
 
+button{
+    background-color: #0f0;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.modal-container{
+    display: flex;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal{
+    background-color: #121212;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.modal h1{
+    margin: 0;
+    color: #fff;
+}
+
+.modal p {
+    opacity: 0.7;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px;
+}
+
+
+.modal-container .modal a {
+    color: #fff8;
+    font-size: 10em;
+    scale: 0;
+    transition: 0.25s;
+    transition-delay: scale calc(0.2s * var(--i));
+}
+
+.modal-container .modal a:hover{
+    color: #d11e1e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .container{
+        gap: 0px;  
+        margin: auto;
+        height: 91.5vh;
+    }
+    
+    .container .box{
+        position: sticky;
+        width: 80%;
+        height: 33%;
+    }
+    
+}

@@ -1,105 +1,62 @@
-<h2 id="h2">¡Click en la respuesta correcta!</h2>   
-    <div class="contenedor">
-        <div class="centrar">
-            <div class="medio"> 
-                <p id="num1"></p>
-            </div> 
-            <div class="medio">
-                <p>+</p>
+<h2 id="h2">¡Click en la respuesta correcta!</h2>
+<div class="contenedor">
+
+
+    <div class="centrar">
+        <div class="medio">
+            <p id="num1">{{N1}}</p>
+        </div>
+        <div class="medio">
+            <p>+</p>
+        </div>
+        <div class="medio">
+            <p id="num2">{{N2}}</p>
+        </div>
+    </div>
+
+<div class="principal">
+
+        <div class="izq">
+          
+          
+            <div id="numeros">
+                <div *ngFor="let v of miArray"  class="card" (click)="checkAnswer(v)">{{v}}</div>
             </div>
-            <div class="medio">
-                <p id="num2"></p>
-            </div>
-        </div> 
-
-
-        <div class="principal">
-            <div class="izq">
-                
-                        <!-- <p>Posible Respuesta A: <span id="posibleRespuestaA"></span></p> -->
-                        <!-- <p>Posible Respuesta B: <span id="posibleRespuestaB"></span></p> -->
-                        <!-- <p>Posible Respuesta C: <span id="posibleRespuestaC"></span></p> -->
-                        <!-- <p>Posible Respuesta D: <span id="posibleRespuestaD"></span></p> -->
-                
-            
-                <div id="container">
-            
-                    <div id="PR1" class="card" style="--i:-2;">-2</div>
-                    <div id="PR2" class="card" style="--i:-1;">+1</div>
-                    <div id="PR3" class="card" style="--i:0;">0</div>
-                    <div id="PR4" class="card" style="--i:1;">1</div>
-                    <div id="resultadoSuma" class="card" style="--i:2;">2</div>
-                </div>
-                <div id="numeros" class="numeros-container"></div>
-            </div>
-
-            <div class="der">
-                
-                <div class="container">
-                    <div class="box signin">
-                        <h2>¡Gracias por la ayudita!</h2>
-                            <button class="signinBtn" (click)="iniciarSession()">Regresar</button>
-                    </div>
-                
-                    <div class="box signup">
-                        <h2>¿Necesitas ayuda?</h2>
-                            <button class="signupBtn" (click)="registrarSession()" >Sí</button>
-                    </div>
-                
-                    <div class="formBx">
-                        <div class="form signinform">
-                            <!-- <form>
-                                <h3>Iniciar Sesión</h3>
-                                <input type="text" placeholder="Username">
-                                <input type="password" placeholder="Password">
-                                <input type="submit" value="Login">
-                                <a href="#" clas="forgot"> Olvidé contraseña</a>
-                            </form> -->
-                        <img src="assets/ayuda.jpg" alt="1">
-            
-                        </div>
-                        <div class="form signupform">
-                            <!-- <form>
-                                <h3>Registrar</h3>
-                                <input type="text" placeholder="Username">
-                                <input type="text" placeholder="Email Address">
-                                <input type="password" placeholder="Password">
-                                <input type="password" placeholder="Confirm">
-                                <input type="submit" value="Registrar">
-                                
-                            </form> -->
-                        <img src="assets/ayudaFacil.JPG" alt="2">
-            
-                        </div>
-                
-                    </div>
-                
-                    
-                </div>
-                
-                <script>
-                    let signinBtn = document.querySelector('.signinBtn');
-                    let signupBtn = document.querySelector('.signupBtn');
-                
-                    let body = document.querySelector('body');
-                
-                    signupBtn.onclick = function(){
-                        body.classList.add('slide');
-                    }
-                
-                    signinBtn.onclick = function(){
-                        body.classList.remove('slide');
-                    }
-                </script>
-
-            </div>
-
-
-
 
         </div>
 
-    
+        <!-- <div class="der">
 
-    </div>
+            <div class="container">
+                <div class="box signin">
+                    <h2>¡Gracias por la ayudita!</h2>
+                    <button class="signinBtn">Regresar</button>
+                </div>
 
+                <div class="box signup">
+                    <h2>¿Necesitas ayuda?</h2>
+                    <button class="signupBtn">Sí</button>
+                </div>
+
+                <div class="formBx">
+                    <div class="form signinform">
+
+                        <img src="ayuda.jpg" alt="1">
+
+                    </div>
+                    <div class="form signupform">
+
+                        <img src="ayudaFacil.JPG" alt="2">
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div> 
+</div>
+
+<script>
+    function recargarPagina() {
+        location.reload(); // Esta línea recarga la página
+    }
+</script>

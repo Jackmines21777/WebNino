@@ -1,33 +1,21 @@
 *{
+    background: #121212;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif; */
-    background-color: #121212;
-}x
-
-/* body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}  */
+}
 
 .content{
-    position: relative;
+    text-align: center;  
 }
+
 .content h2{
     position: absolute;
+    width: 100%;
+    padding: 50px;
     color: #fff;
-    /* transform: translate(-50%,-50%); */
-    font-size: 8em;
-    text-align: center;
-    justify-content: center;
-    padding-left: 30%;
-    padding-right: 30%;
+    font-size: 140px;
 
 }
-
 
 .content h2:nth-child(1){
     color: transparent;

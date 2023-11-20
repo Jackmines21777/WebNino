@@ -1,24 +1,18 @@
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background: #121212; */
-    justify-content: center;
-    align-items: center;
 }
 
-/* body {
-    display: flex;
-    min-height: 100vh;
-} */
-
+.tabs {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 .tabs input {
     visibility: hidden;
     display: none;
 }
-
 
 
 .buttons {
@@ -117,4 +111,60 @@
 
 .tabs input:nth-child(5):checked ~ .buttons .underline{
     left: 80%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+.buttons {
+    /* position: sticky; */
+    /* width: 100%; */
+    top:0;
+    z-index: 1;
+    display: flex;
+    gap: 50px;
+    border-bottom: (1px solid #121212);
+    /* background: #121212; */
+    overflow: hidden;
+    /* border-radius: 20px; */
+}
+
+.buttons label {
+    /* width: 80%; */
+    font-size: 1.5em;
+    -webkit-text-stroke: 1px #fff;
+    color: #121212;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.buttons label:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+}
+
+.tabs input:nth-child(1):checked ~ .buttons .underline{
+    left: 2%;
+}
+
+.tabs input:nth-child(2):checked ~ .buttons .underline{
+    left: 21%;
+}
+
+.tabs input:nth-child(3):checked ~ .buttons .underline{
+    left: 40%;
+}
+
+.tabs input:nth-child(4):checked ~ .buttons .underline{
+    left: 59%;
+}
+
+.tabs input:nth-child(5):checked ~ .buttons .underline{
+    left: 78%;
+}
+
+
+
 }

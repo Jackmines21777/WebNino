@@ -36,12 +36,7 @@ const routes: Routes = [
       {
         path: "nivelFacil",
         component: NivelFacilComponent,
-        children: [
-          {
-            path: "nivelSuma",
-            component: SumaComponent
-          },
-        ]
+       
       },
       {
         path: "nivelMedio",
@@ -50,10 +45,6 @@ const routes: Routes = [
       {
         path: "nivelDificil",
         component: NivelDificilComponent
-      },
-      {
-        path: "nivelSuma",
-        component: SumaComponent
       },
       {
         path: "nivelFinal",

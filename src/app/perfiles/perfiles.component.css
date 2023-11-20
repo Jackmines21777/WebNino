@@ -5,15 +5,6 @@
     background: #121212;
 }
 
-
-/* body:has(.box[data-color="clr1"]:hover){
-    background: #00ff62;
-}
-body:has(.box[data-color="clr2"]:hover){
-    background: #ff0008;
-} */
-
-
 .container{
     position: relative;
     display: flex;
@@ -21,7 +12,7 @@ body:has(.box[data-color="clr2"]:hover){
     align-items: center;
     gap: 200px;
     flex-wrap: wrap;
-    height: 89.5vh;
+    height: 100vh;
 }
 
 .container .box{
@@ -121,11 +112,14 @@ body:has(.box[data-color="clr2"]:hover){
     display: flex;
     justify-content: center;
     gap: 25px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
 }
 
 .container .box ul a{
     color: #fff8;
-    font-size: 2em;
+    font-size: 30px;
     scale: 0;
     transition: 0.25s;
     transition-delay: scale calc(0.2s * var(--i));
@@ -140,3 +134,19 @@ body:has(.box[data-color="clr2"]:hover){
     color: #fff;
 }
 
+@media only screen and (max-width: 600px) {
+
+    .container{
+        gap: 0px;  
+        margin: auto;
+        height: 91.5vh;
+    }
+    
+    .container .box{
+        position: sticky;
+        width: 80%;
+        height: 33%;
+    
+    }
+    
+}
