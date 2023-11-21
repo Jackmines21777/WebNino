@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MemoriaComponent } from '../memoria/memoria.component';
+
+
 
 @Component({
   selector: 'app-nivel-dificil',
@@ -6,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./nivel-dificil.component.css']
 })
 export class NivelDificilComponent {
+  @ViewChild('open') openButton!: ElementRef | undefined;
+  @ViewChild('modal_container') modalContainer!: ElementRef | undefined;
+  @ViewChild('close') closeButton!: ElementRef | undefined;
 
+  constructor(public dialog: MatDialog){}
+
+  openDialogMemoria(): void {
+    this.dialog.open(MemoriaComponent, {
+      width: '50%',
+      height: '70%',
+    });
+  }
+ 
 }

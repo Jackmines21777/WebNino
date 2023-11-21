@@ -1,7 +1,7 @@
 <div class="container">
     <div class="box" data-color="clr1">
         <div class="imgBx"><img src="assets/su.png"  alt="signo+"></div>
-        <div class="glass" routerLink="/layout/nivelFacil/nivelSuma" (click)="openDialog()">
+        <div class="glass" routerLink="/layout/nivelFacil/nivelSuma" (click)="openDialogSuma()">
             <h3>Nivel 1<br><span>SUMA</span></h3>
             <ul>
                 <a id="open" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
@@ -11,7 +11,7 @@
 
     <div class="box" data-color="clr2">
         <div class="imgBx"><img src="assets/signoresta.png" alt="signo-"></div>
-        <div class="glass">
+        <div class="glass" routerLink="/layout/nivelFacil/nivelResta" (click)="openDialogResta()">
             <h3>Nivel 2<br><span>RESTA</span></h3>
             <ul>
                 <a id="open" style="--i:2;" ><i class="fa-solid fa-file-word"></i></a>

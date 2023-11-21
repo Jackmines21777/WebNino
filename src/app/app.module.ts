@@ -26,6 +26,9 @@ import { NAleatorioComponent } from './n-aleatorio/n-aleatorio.component';
 import { NivelFinalComponent } from './nivel-final/nivel-final.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './_material/material/material.module';
+import { RestaComponent } from './resta/resta.component';
+import { MultiplicacionComponent } from './multiplicacion/multiplicacion.component';
+import { DivisionComponent } from './division/division.component';
 
 
 
@@ -53,6 +56,9 @@ import { MaterialModule } from './_material/material/material.module';
     SumaComponent,
     NAleatorioComponent,
     NivelFinalComponent,
+    RestaComponent,
+    MultiplicacionComponent,
+    DivisionComponent,
   ],
   imports: [
     BrowserModule,

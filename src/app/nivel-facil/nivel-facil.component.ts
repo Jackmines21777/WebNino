@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { SumaComponent } from '../suma/suma.component';
 import { MatDialog } from '@angular/material/dialog';
+import { RestaComponent } from '../resta/resta.component';
+import { SumaComponent } from '../suma/suma.component';
 
 @Component({
   selector: 'app-nivel-facil',
@@ -14,10 +15,18 @@ export class NivelFacilComponent {
 
   constructor(public dialog: MatDialog){}
 
-  openDialog(): void {
+  openDialogSuma(): void {
     this.dialog.open(SumaComponent, {
       width: '70%',
-      height: '46.5%'
+      height: '48%'
     });
   }
+ 
+  openDialogResta(): void {
+    this.dialog.open(RestaComponent, {
+      width: '70%',
+      height: '80vh'
+    }); 
+  }
+
 }
