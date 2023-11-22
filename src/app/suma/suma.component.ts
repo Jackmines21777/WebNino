@@ -68,7 +68,6 @@ export class SumaComponent implements OnInit {
     this.mezclarArray(this.miArray);
     // console.log(this.miArray)
     setTimeout(()=> {
-      console.log("Ded")
       this.isLoaded = true;
     },1200)
   }
@@ -122,14 +121,11 @@ export class SumaComponent implements OnInit {
     if (this.resultadoSuma == selectedValue) {
       // resultadoSuma.classList.add("correct");
        const response =  this._snackBar.openFromComponent(SnackbackActionComponent)
-      
+      response.onAction().subscribe( {
+        next : () => this.reset()
+      })
       response.afterDismissed().subscribe( a => {
-        // a.dismissedByAction ?  this.reset() : this._matDialogRef.close();
-        if(a.dismissedByAction == true){
-          this.reset()
-        }else {
-          this._matDialogRef.close()
-        }
+        a.dismissedByAction ? '': this._matDialogRef.close(); 
       })
     } else {
       this._snackBar.open("UY!! FALLASTE, VUELVE A INTENTARLO ","c:")
