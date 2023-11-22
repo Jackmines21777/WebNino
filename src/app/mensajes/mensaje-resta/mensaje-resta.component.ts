@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mensaje-resta.component.css']
 })
 export class MensajeRestaComponent {
-
+ 
 }
