@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { SnackbackActionComponent } from './components/snackback-action/snackback-action.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-suma',
@@ -9,7 +12,8 @@ import { Router } from '@angular/router';
 export class SumaComponent implements OnInit {
   
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) { }
+  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router,
+    private _snackBar : MatSnackBar, private _matDialogRef : MatDialogRef<SumaComponent>) { }
 
   
   signinBtn: HTMLElement | null = this.el.nativeElement.querySelector('.signinBtn');
@@ -20,11 +24,7 @@ export class SumaComponent implements OnInit {
   // body!: Element<HTMLDivElement>
 
 
-
-  PR1: number = 0
-  PR2: number = 0
-  PR3: number = 0
-  PR4: number = 0
+  isLoaded : boolean = false;
 
   N1: number = 0
   N2: number = 0
@@ -35,8 +35,11 @@ export class SumaComponent implements OnInit {
 
   miArray: number[] = [];
   ngOnInit() {
+    this.initSuma();
+  }
 
-
+  initSuma(){
+    this.isLoaded = false; 
     // Genera y muestra el primer número aleatorio
     this.N1 = this.generarNumeroAleatorio(1, 5);
     // mostrarNumeroEnHTML("num1", N1);
@@ -45,16 +48,7 @@ export class SumaComponent implements OnInit {
     this.N2 = this.generarNumeroAleatorio(1, 5);
     // mostrarNumeroEnHTML("num2", N2);
 
-
     this.resultadoSuma = this.suma(this.N1, this.N2);
-
-
-
-
-    this.PR1 = this.generarNumeroAleatorio(1, 20);
-    this.PR2 = this.generarNumeroAleatorio(1, 20);
-    this.PR3 = this.generarNumeroAleatorio(1, 20);
-    this.PR4 = this.generarNumeroAleatorio(1, 20);
 
     for (let index = 0; index < 5; index++) {
 
@@ -69,11 +63,16 @@ export class SumaComponent implements OnInit {
 
     this.miArray.push(this.resultadoSuma)
 
-    console.log(this.miArray)
+    // console.log(this.miArray)
 
     this.mezclarArray(this.miArray);
-    console.log(this.miArray)
+    // console.log(this.miArray)
+    setTimeout(()=> {
+      console.log("Ded")
+      this.isLoaded = true;
+    },1200)
   }
+  
 
   iniciarSession() {
     this.der.nativeElement.classList.remove('slide');
@@ -94,7 +93,6 @@ export class SumaComponent implements OnInit {
     do {
       numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
     } while (numeroAleatorio === numeroExcluido);
-
     return numeroAleatorio;
   }
 
@@ -123,11 +121,29 @@ export class SumaComponent implements OnInit {
     console.log(selectedValue)
     if (this.resultadoSuma == selectedValue) {
       // resultadoSuma.classList.add("correct");
-      alert("repuesta correcta")
+       const response =  this._snackBar.openFromComponent(SnackbackActionComponent)
+      
+      response.afterDismissed().subscribe( a => {
+        // a.dismissedByAction ?  this.reset() : this._matDialogRef.close();
+        if(a.dismissedByAction == true){
+          this.reset()
+        }else {
+          this._matDialogRef.close()
+        }
+      })
     } else {
-      alert("repuesta incorrecta")
+      this._snackBar.open("UY!! FALLASTE, VUELVE A INTENTARLO ","c:")
+      
       // resultadoSuma.classList.add("incorrect");
     }
+  }
+
+
+  reset(){
+    this.N1 = 0;
+    this.N2 = 0   
+    this.miArray = [];
+    this.initSuma();
   }
 
 }

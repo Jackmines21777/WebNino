@@ -18,7 +18,6 @@ export class NivelFacilComponent {
   openDialogSuma(): void {
     this.dialog.open(SumaComponent, {
       width: '70%',
-      height: '48%'
     });
   }
  

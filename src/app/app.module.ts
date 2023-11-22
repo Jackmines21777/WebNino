@@ -29,6 +29,7 @@ import { MaterialModule } from './_material/material/material.module';
 import { RestaComponent } from './resta/resta.component';
 import { MultiplicacionComponent } from './multiplicacion/multiplicacion.component';
 import { DivisionComponent } from './division/division.component';
+import { SkeletonComponent } from './suma/components/skeleton/skeleton.component';
 
 
 
@@ -65,7 +66,8 @@ import { DivisionComponent } from './division/division.component';
     AppRoutingModule,
     BarritaComponent,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    SkeletonComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
