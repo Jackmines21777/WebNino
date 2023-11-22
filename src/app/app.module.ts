@@ -30,6 +30,7 @@ import { RestaComponent } from './resta/resta.component';
 import { MultiplicacionComponent } from './multiplicacion/multiplicacion.component';
 import { DivisionComponent } from './division/division.component';
 import { SkeletonComponent } from './suma/components/skeleton/skeleton.component';
+import { MensajeRestaComponent } from './mensajes/mensaje-resta/mensaje-resta.component';
 
 
 
@@ -60,6 +61,7 @@ import { SkeletonComponent } from './suma/components/skeleton/skeleton.component
     RestaComponent,
     MultiplicacionComponent,
     DivisionComponent,
+    MensajeRestaComponent,
   ],
   imports: [
     BrowserModule,
