@@ -1,0 +1,15 @@
+.sound-controller {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn {
+    font-size: 3rem;
+    margin-right: 20px;
+  }
+  
+  .volume-slider {
+    width: 380px; /* Ajusta el ancho según tus necesidades */
+    margin-bottom: 0; /* Elimina el espacio extra en la parte inferior del input */
+  }
+  

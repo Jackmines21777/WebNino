@@ -31,6 +31,8 @@ import { MultiplicacionComponent } from './multiplicacion/multiplicacion.compone
 import { DivisionComponent } from './division/division.component';
 import { SkeletonComponent } from './suma/components/skeleton/skeleton.component';
 import { MensajeRestaComponent } from './mensajes/mensaje-resta/mensaje-resta.component';
+import { AudioConfigComponent } from './audio-config/audio-config.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
 
 
 
@@ -62,6 +64,8 @@ import { MensajeRestaComponent } from './mensajes/mensaje-resta/mensaje-resta.co
     MultiplicacionComponent,
     DivisionComponent,
     MensajeRestaComponent,
+    AudioConfigComponent,
+    ConfiguracionComponent,
   ],
   imports: [
     BrowserModule,
