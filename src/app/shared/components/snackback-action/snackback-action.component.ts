@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatSnackBarAction, MatSnackBarActions, MatSnackBarRef } from '@angular/material/snack-bar';
 import { MaterialModule } from 'src/app/_material/material/material.module';
+import { SkeletonComponent } from '../skeleton/skeleton.component';
 
 @Component({
   selector: 'app-snackback-action',
@@ -9,17 +10,17 @@ import { MaterialModule } from 'src/app/_material/material/material.module';
   imports: [
     CommonModule,
     MaterialModule,
-    
+    SkeletonComponent
   ],
   template: `
     <span class="example-pizza-party" matSnackBarLabel>
-    repuesta correcta ¿Desea segir jugando?
+    ¡Correcto!, ¡Sigue así!, ¿Vamos por más?
     </span>
     <span matSnackBarActions>
-      <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">OK</button>
+      <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">Sí, me leder</button>
     </span>
     <span matSnackBarActions>
-      <button mat-button matSnackBarAction (click)="snackBarRef.dismiss()">NOP</button>
+      <button mat-button matSnackBarAction (click)="snackBarRef.dismiss()">Ahí noma'</button>
     </span>
   `,
   styleUrls: ['./snackback-action.component.css']

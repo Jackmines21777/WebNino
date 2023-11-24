@@ -79,7 +79,7 @@ export class RestaComponent implements OnInit {
       setTimeout(()=> {
         this.isLoaded = true;
       },1200)
-      
+
     }
 
     this.miArray.push(this.resultadoResta)
@@ -134,15 +134,6 @@ export class RestaComponent implements OnInit {
 
 
   checkAnswer(selectedValue: number): void {
-
-    console.log(selectedValue)
-    if (this.resultadoResta == selectedValue) {
-      // resultadoSuma.classList.add("correct");
-      alert("repuesta correcta")
-    } else {
-      alert("repuesta incorrecta")
-      // resultadoSuma.classList.add("incorrect");
-    }
 
     console.log(selectedValue)
     if (this.resultadoResta == selectedValue) {

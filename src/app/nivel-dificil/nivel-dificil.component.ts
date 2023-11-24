@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MemoriaComponent } from '../memoria/memoria.component';
+import { MensajeDivisionComponent } from '../mensajes/mensaje-division/mensaje-division.component';
+import { MensajeMemoriaComponent } from '../mensajes/mensaje-memoria/mensaje-memoria.component';
 
 
 
@@ -22,5 +24,10 @@ export class NivelDificilComponent {
       height: '70%',
     });
   }
- 
+
+  openDialogMensajeMemoria(): void {
+    this.dialog.open(MensajeMemoriaComponent, {
+      width: '70%',
+    }); 
+  }
 }
