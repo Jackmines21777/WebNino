@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbackActionComponent } from '../shared/components/snackback-action/snackback-action.component';
 
 @Component({
   selector: 'app-division',
@@ -9,27 +12,38 @@ export class DivisionComponent implements OnInit {
 
   isLoaded: Boolean = false;
 
-  factor : number = [2, 3, 4, 5][Math.floor(Math.random() * 4)]; // Selecciona aleatoriamente entre 2, 3, 4 o 5
+  miArray: number[] = [1, 2, 3, 4, 5, 6];
+  factor: number = this.miArray[Math.floor(Math.random() * 4)]; // Selecciona aleatoriamente entre 2, 3, 4 o 5
   resultadoDivision = 0;
 
 
-  N1 : number = 0;
-  N2 : number = 0;
+  N1: number = 0;
+  N2: number = 0;
+
+  constructor(
+    private _snackBar: MatSnackBar, private _matDialogRef: MatDialogRef<DivisionComponent>) { }
 
 
 
   ngOnInit(): void {
-    
-    let {N1, N2, divisionTotal } = this.divisionEntreMultiplos(this.factor);
 
-    this.N1 = N1;
-    this.N2 = N2;
-    this.resultadoDivision = divisionTotal;
-    this.isLoaded = true;
+    this.initDiv();
 
   }
 
-  divisionEntreMultiplos(factor : number) {
+  initDiv() {
+    this.isLoaded = false;
+    let { N1, N2, divisionTotal } = this.divisionEntreMultiplos(this.factor);
+    console.log(this.miArray)
+    this.N1 = N1;
+    this.N2 = N2;
+    this.resultadoDivision = divisionTotal;
+    setTimeout(() => {
+      this.isLoaded = true
+    }, 1200)
+  }
+
+  divisionEntreMultiplos(factor: number) {
     // Genera dos números que sean múltiplos entre sí
     const [N1, N2] = this.generarMultiplosAleatorios(factor);//* destructuracion
 
@@ -46,7 +60,7 @@ export class DivisionComponent implements OnInit {
 
 
 
-  generarMultiplosAleatorios(factor: number) : [number, number] {
+  generarMultiplosAleatorios(factor: number): [number, number] {
     // Genera un número aleatorio entre 1 y 10
     const N1 = Math.floor(Math.random() * 10) + 1;
 
@@ -57,6 +71,34 @@ export class DivisionComponent implements OnInit {
     return [N1, N2];
   }
 
+
+
+
+  checkAnswer(selectedValue: number): void {
+
+    console.log(selectedValue)
+    if (this.resultadoDivision == selectedValue) {
+      // resultadoSuma.classList.add("correct");
+      const response = this._snackBar.openFromComponent(SnackbackActionComponent)
+      response.onAction().subscribe({
+        next: () => this.reset()
+      })
+      response.afterDismissed().subscribe(a => {
+        a.dismissedByAction ? '' : this._matDialogRef.close();
+      })
+    } else {
+      this._snackBar.open("UY!! FALLASTE, VUELVE A INTENTARLO ", "c:")
+
+      // resultadoSuma.classList.add("incorrect");
+    }
+  }
+
+
+  reset() {
+    this.N1 = 0;
+    this.N2 = 0;
+    this.initDiv();
+  }
 }
 
 
