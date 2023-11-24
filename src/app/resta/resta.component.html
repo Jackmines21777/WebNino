@@ -1,31 +1,38 @@
-<h2 id="h2">¡Click en la respuesta correcta!</h2>
-<div class="contenedor">
+<ng-template #skeleton>
+    <app-skeleton></app-skeleton>
+</ng-template>
 
 
-    <div class="centrar">
-        <div class="medio">
-            <p id="num1">{{N1}}</p>
+<ng-container *ngIf="isLoaded; else skeleton">
+
+    <h2 id="h2">¡Click en la respuesta correcta!</h2>
+    <div class="contenedor">
+
+
+        <div class="centrar">
+            <div class="medio">
+                <p id="num1">{{N1}}</p>
+            </div>
+            <div class="medio">
+                <p>-</p>
+            </div>
+            <div class="medio">
+                <p id="num2">{{N2}}</p>
+            </div>
         </div>
-        <div class="medio">
-            <p>-</p>
-        </div>
-        <div class="medio">
-            <p id="num2">{{N2}}</p>
-        </div>
-    </div>
 
-<div class="principal">
+        <div class="principal">
 
-        <div class="izq">
-          
-          
-            <div id="numeros">
-                <div *ngFor="let v of miArray"  class="card" (click)="checkAnswer(v)">{{v}}</div>
+            <div class="izq">
+
+
+                <div id="numeros">
+                    <div *ngFor="let v of miArray" class="card" (click)="checkAnswer(v)">{{v}}</div>
+                </div>
+
             </div>
 
-        </div>
-
-        <!-- <div class="der">
+            <!-- <div class="der">
 
             <div class="container">
                 <div class="box signin">
@@ -52,6 +59,7 @@
                 </div>
             </div>
         </div> -->
-    </div> 
-</div>
+        </div>
+    </div>
 
+</ng-container>

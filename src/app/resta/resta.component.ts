@@ -1,5 +1,8 @@
 import { Router } from '@angular/router';
-import { Component, OnInit, ElementRef,Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { SnackbackActionComponent } from '../shared/components/snackback-action/snackback-action.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-resta',
@@ -7,11 +10,12 @@ import { Component, OnInit, ElementRef,Renderer2, ViewChild } from '@angular/cor
   styleUrls: ['./resta.component.css']
 })
 export class RestaComponent implements OnInit {
-  
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router) { }
 
-  
+  constructor(private el: ElementRef, private renderer: Renderer2, private router: Router,
+    private _snackBar: MatSnackBar, private _matDialogRef: MatDialogRef<RestaComponent>) { }
+
+
   signinBtn: HTMLElement | null = this.el.nativeElement.querySelector('.signinBtn');
   signupBtn: HTMLElement | null = this.el.nativeElement.querySelector('.signupBtn');
 
@@ -20,6 +24,7 @@ export class RestaComponent implements OnInit {
   // body!: Element<HTMLDivElement>
 
 
+  isLoaded: boolean = false;
 
   PR1: number = 0
   PR2: number = 0
@@ -36,7 +41,13 @@ export class RestaComponent implements OnInit {
   miArray: number[] = [];
   ngOnInit() {
 
+    this.initResta();
 
+
+  }
+
+  initResta() {
+    this.isLoaded = false; 
     // Genera y muestra el primer número aleatorio
     this.N1 = this.generarNumeroAleatorio(5, 12);
     // mostrarNumeroEnHTML("num1", N1);
@@ -51,19 +62,23 @@ export class RestaComponent implements OnInit {
 
 
 
-    this.PR1 = this.generarNumeroAleatorio(1, 10);
-    this.PR2 = this.generarNumeroAleatorio(1, 10);
-    this.PR3 = this.generarNumeroAleatorio(1, 10);
-    this.PR4 = this.generarNumeroAleatorio(1, 10);
+    // this.PR1 = this.generarNumeroAleatorio(1, 10);
+    // this.PR2 = this.generarNumeroAleatorio(1, 10);
+    // this.PR3 = this.generarNumeroAleatorio(1, 10);
+    // this.PR4 = this.generarNumeroAleatorio(1, 10);
 
     for (let index = 0; index < 5; index++) {
 
       let v = this.generarNumeroAleatorioExcluyendo(1, 20, this.resultadoResta);
-      if(this.miArray.find( (e) => e == v)){
+      if (this.miArray.find((e) => e == v)) {
         index--;
-      }else {
+      } else {
         this.miArray.push(v);
       }
+
+      setTimeout(()=> {
+        this.isLoaded = true;
+      },1200)
       
     }
 
@@ -74,6 +89,7 @@ export class RestaComponent implements OnInit {
     this.mezclarArray(this.miArray);
     console.log(this.miArray)
   }
+
 
   iniciarSession() {
     this.der.nativeElement.classList.remove('slide');
@@ -109,7 +125,7 @@ export class RestaComponent implements OnInit {
 
 
   // FUNCION MEZCLAR ARRAY
-  mezclarArray(array : number[] ) {
+  mezclarArray(array: number[]) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -127,6 +143,29 @@ export class RestaComponent implements OnInit {
       alert("repuesta incorrecta")
       // resultadoSuma.classList.add("incorrect");
     }
+
+    console.log(selectedValue)
+    if (this.resultadoResta == selectedValue) {
+      // resultadoSuma.classList.add("correct");
+      const response = this._snackBar.openFromComponent(SnackbackActionComponent)
+      response.onAction().subscribe({
+        next: () => this.reset()
+      })
+      response.afterDismissed().subscribe(a => {
+        a.dismissedByAction ? '' : this._matDialogRef.close();
+      })
+    } else {
+      this._snackBar.open("UY!! FALLASTE, VUELVE A INTENTARLO ", "c:")
+
+      // resultadoSuma.classList.add("incorrect");
+    }
   }
 
+
+  reset() {
+    this.N1 = 0;
+    this.N2 = 0
+    this.miArray = [];
+    this.initResta();
+  }
 }

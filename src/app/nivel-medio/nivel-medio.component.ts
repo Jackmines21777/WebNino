@@ -18,14 +18,12 @@ export class NivelMedioComponent {
   openDialogMultiplicacion(): void {
     this.dialog.open(MultiplicacionComponent, {
       width: '70%',
-      height: '48%'
     });
   }
  
   openDialogDivision(): void {
     this.dialog.open(DivisionComponent, {
       width: '70%',
-      height: '48%'
     });
   }
 

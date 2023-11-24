@@ -9,9 +9,10 @@ import { SumaComponent } from '../suma/suma.component';
   styleUrls: ['./nivel-facil.component.css']
 })
 export class NivelFacilComponent {
-  @ViewChild('open') openButton!: ElementRef | undefined;
-  @ViewChild('modal_container') modalContainer!: ElementRef | undefined;
-  @ViewChild('close') closeButton!: ElementRef | undefined;
+
+  // @ViewChild('open') openButton!: ElementRef | undefined;
+  // @ViewChild('modal_container') modalContainer!: ElementRef | undefined;
+  // @ViewChild('close') closeButton!: ElementRef | undefined;
 
   constructor(public dialog: MatDialog){}
 
@@ -24,7 +25,6 @@ export class NivelFacilComponent {
   openDialogResta(): void {
     this.dialog.open(RestaComponent, {
       width: '70%',
-      height: '80vh'
     }); 
   }
 
