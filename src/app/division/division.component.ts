@@ -13,7 +13,6 @@ export class DivisionComponent implements OnInit {
   isLoaded: Boolean = false;
 
   miArray: number[] = [1, 2, 3, 4, 5, 6];
-  factor: number = this.miArray[Math.floor(Math.random() * 4)]; // Selecciona aleatoriamente entre 2, 3, 4 o 5
   resultadoDivision = 0;
 
 
@@ -32,8 +31,9 @@ export class DivisionComponent implements OnInit {
   }
 
   initDiv() {
+    
     this.isLoaded = false;
-    let { N1, N2, divisionTotal } = this.divisionEntreMultiplos(this.factor);
+    let { N1, N2, divisionTotal } = this.divisionEntreMultiplos(this.miArray[Math.floor(Math.random() * 6)]);
     console.log(this.miArray)
     this.N1 = N1;
     this.N2 = N2;
