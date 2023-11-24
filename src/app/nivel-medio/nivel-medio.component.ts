@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
 import { MatDialog } from '@angular/material/dialog';
 import { MultiplicacionComponent } from '../multiplicacion/multiplicacion.component';
 import { DivisionComponent } from '../division/division.component';
+import { MensajeMultiplicacionComponent } from '../mensajes/mensaje-multiplicacion/mensaje-multiplicacion.component';
+import { MensajeDivisionComponent } from '../mensajes/mensaje-division/mensaje-division.component';
 
 @Component({
   selector: 'app-nivel-medio',
@@ -27,6 +29,18 @@ export class NivelMedioComponent {
       width: '70%',
       height: '48%'
     });
+  }
+
+  openDialogMensajeMultiplicacion(): void {
+    this.dialog.open(MensajeMultiplicacionComponent, {
+      width: '70%',
+    }); 
+  }
+
+  openDialogMensajeDivision(): void {
+    this.dialog.open(MensajeDivisionComponent, {
+      width: '70%',
+    }); 
   }
 
 }

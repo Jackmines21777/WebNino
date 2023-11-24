@@ -31,6 +31,12 @@ import { MultiplicacionComponent } from './multiplicacion/multiplicacion.compone
 import { DivisionComponent } from './division/division.component';
 import { SkeletonComponent } from './suma/components/skeleton/skeleton.component';
 import { MensajeRestaComponent } from './mensajes/mensaje-resta/mensaje-resta.component';
+import { MensajeSumaComponent } from './mensajes/mensaje-suma/mensaje-suma.component';
+import { MensajeMultiplicacionComponent } from './mensajes/mensaje-multiplicacion/mensaje-multiplicacion.component';
+import { MensajeDivisionComponent } from './mensajes/mensaje-division/mensaje-division.component';
+import { MensajePadreComponent } from './mensajes/mensaje-padre/mensaje-padre.component';
+import { MensajeHijoComponent } from './mensajes/mensaje-hijo/mensaje-hijo.component';
+import { MensajeMemoriaComponent } from './mensajes/mensaje-memoria/mensaje-memoria.component';
 
 
 
@@ -62,6 +68,12 @@ import { MensajeRestaComponent } from './mensajes/mensaje-resta/mensaje-resta.co
     MultiplicacionComponent,
     DivisionComponent,
     MensajeRestaComponent,
+    MensajeSumaComponent,
+    MensajeMultiplicacionComponent,
+    MensajeDivisionComponent,
+    MensajePadreComponent,
+    MensajeHijoComponent,
+    MensajeMemoriaComponent,
   ],
   imports: [
     BrowserModule,

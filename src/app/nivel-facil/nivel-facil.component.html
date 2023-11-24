@@ -1,22 +1,25 @@
 <div class="container">
     <div class="box" data-color="clr1">
         <div class="imgBx"><img src="assets/su.png"  alt="signo+"></div>
-        <div class="glass" routerLink="/layout/nivelFacil/nivelSuma" (click)="openDialogSuma()">
-            <h3>Nivel 1<br><span>SUMA</span></h3>
+        <div class="glass">
+            <div class="div" style="width: 100%; background: transparent;  height: 100%; display: flex;
+            align-items: center; justify-content: center;" (click)="openDialogSuma()">
+                <h3>Nivel 1<br><span>SUMA</span></h3>
+            </div>
             <ul>
-                <a id="open" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
+                <a id="open" (click)="openDialogMensajeSuma()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
             </ul>
         </div>
     </div>
 
     <div class="box" data-color="clr2">
         <div class="imgBx"><img src="assets/signoresta.png" alt="signo-"></div>
-        <div class="glass" routerLink="/layout/nivelFacil/nivelResta" (click)="openDialogResta()">
+        <div class="glass" (click)="openDialogResta()">
             <h3>Nivel 2<br><span>RESTA</span></h3>
-            <ul>
-                <a id="open" style="--i:2;" ><i class="fa-solid fa-file-word"></i></a>
-            </ul>
         </div>
+        <ul>
+            <a id="open" (click)="openDialogMensajeResta()" style="--i:2;" ><i class="fa-solid fa-file-word"></i></a>
+        </ul>
     </div>
 </div>
 
