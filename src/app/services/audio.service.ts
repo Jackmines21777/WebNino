@@ -12,7 +12,7 @@ export class AudioService {
 
   constructor() {
     this.sound = new Howl({
-      src: ['assets/navidad.mp3'],
+      src: [''],
       loop: true,
     });
   }
