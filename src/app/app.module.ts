@@ -37,6 +37,8 @@ import { MensajePadreComponent } from './mensajes/mensaje-padre/mensaje-padre.co
 import { MensajeHijoComponent } from './mensajes/mensaje-hijo/mensaje-hijo.component';
 import { MensajeMemoriaComponent } from './mensajes/mensaje-memoria/mensaje-memoria.component';
 import { SkeletonComponent } from './shared/components/skeleton/skeleton.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { AudioConfigComponent } from './audio-config/audio-config.component';
 
 
 
@@ -74,6 +76,8 @@ import { SkeletonComponent } from './shared/components/skeleton/skeleton.compone
     MensajePadreComponent,
     MensajeHijoComponent,
     MensajeMemoriaComponent,
+    ConfiguracionComponent,
+    AudioConfigComponent,
     
   ],
   imports: [

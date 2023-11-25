@@ -20,13 +20,13 @@ export class NivelDificilComponent {
 
   openDialogMemoria(): void {
     this.dialog.open(MemoriaComponent, {
-      width: '50%',
+      // width: '50%',
     });
   }
 
   openDialogMensajeMemoria(): void {
     this.dialog.open(MensajeMemoriaComponent, {
-      width: '70%',
+      width: '50%',
     }); 
   }
 }

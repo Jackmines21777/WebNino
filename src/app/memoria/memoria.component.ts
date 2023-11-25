@@ -6,7 +6,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angula
   templateUrl: './memoria.component.html',
   styleUrls: ['./memoria.component.css']
 })
-export class MemoriaComponent implements OnInit, AfterViewInit {
+export class MemoriaComponent implements OnInit {
 
   emojis: any[] = ["🥵", "🥵", "🥶", "🥶", "😡", "😡", "🤯", "🤯", "🥑", "🥑",
     "🐸", "🐸", "😍", "😍", "👻", "👻"];
@@ -18,10 +18,6 @@ export class MemoriaComponent implements OnInit, AfterViewInit {
     this.initMemoria()
   }
 
-
-  ngAfterViewInit(): void {
-    
-  }
 
   initMemoria() {
     this.shuf_emojis = this.emojis.sort(() => (Math.random() > .5) ? 2 : -1);
@@ -87,6 +83,7 @@ export class MemoriaComponent implements OnInit, AfterViewInit {
       // console.log( document.querySelector('.game'))
     }
   }
+
   resetMemoria() {
     document.querySelectorAll(".i").forEach( e => {
       e.remove();
@@ -96,14 +93,4 @@ export class MemoriaComponent implements OnInit, AfterViewInit {
   }
 
 
-  //* daosdoasod
-
-  /**
-   ** asdasdad
-   *! ssdasdadada
-   *? SADADAdada
-   * TODO: dasdasdads
-   */
 }
-
-

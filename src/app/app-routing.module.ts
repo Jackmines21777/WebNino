@@ -13,6 +13,7 @@ import { RestaComponent } from './resta/resta.component';
 import { MultiplicacionComponent } from './multiplicacion/multiplicacion.component';
 import { DivisionComponent } from './division/division.component';
 import { NivelFinalComponent } from './nivel-final/nivel-final.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
 
 const routes: Routes = [
  
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: "registerLogin",
         component: RegisterLoginComponent
+      },
+      {
+        path:"configuracion",
+        component: ConfiguracionComponent
       },
       {
         path: "nivelFacil",

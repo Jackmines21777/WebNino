@@ -1,22 +1,26 @@
 <div class="container">
     <div class="box" data-color="clr1">
         <div class="imgBx"><img src="assets/signopor.png" alt="signo+"></div>
-        <div class="glass"  (click)="openDialogMultiplicacion()">
-            <h3>Nivel 3<br><span>MULTIPLICACIÓN</span></h3>
+        <div class="glass">
+            <div class="div" style="width: 100%; background: transparent;" (click)="openDialogMultiplicacion()">
+                <h3>Nivel 3<br>Escolar<br><span>MULTIPLICACIÓN<br>(6-12)años</span></h3>
             </div>
-        <ul>
-            <a (click)="openDialogMensajeMultiplicacion()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
-        </ul>
+            <ul>
+                <a (click)="openDialogMensajeMultiplicacion()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
+            </ul>
+        </div>
     </div>
 
     <div class="box" data-color="clr2">
         <div class="imgBx"><img src="assets/signodiv.png" alt="signo-"></div>
-        <div class="glass"  (click)="openDialogDivision()">
-            <h3>Nivel 4<br><span>DIVISIÓN</span></h3>
-        </div>
-        <ul>
-            <a (click)="openDialogMensajeDivision()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
-        </ul>
+        <div class="glass">
+            <div class="div" style="width: 100%; background: transparent;" (click)="openDialogDivision()">
+                <h3>Nivel 4<br>Escolar<br><span>DIVISIÓN<br>(6-12)años</span></h3>
+            </div>
+            <ul>
+                <a (click)="openDialogMensajeDivision()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
+            </ul>
+        </div> 
     </div>
     
 
