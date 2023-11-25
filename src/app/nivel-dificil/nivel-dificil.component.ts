@@ -21,7 +21,6 @@ export class NivelDificilComponent {
   openDialogMemoria(): void {
     this.dialog.open(MemoriaComponent, {
       width: '50%',
-      height: '70%',
     });
   }
 
