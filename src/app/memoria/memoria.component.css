@@ -76,10 +76,14 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 15px;
     background: #fff;
     transform: rotateY(180deg);
     transition: all 0.25s;
+    background: #121212;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .i.boxOpen {

@@ -128,7 +128,7 @@ export class SumaComponent implements OnInit {
         a.dismissedByAction ? '': this._matDialogRef.close(); 
       })
     } else {
-      this._snackBar.open("UY!! FALLASTE, VUELVE A INTENTARLO ","c:")
+      this._snackBar.open("¡Incorrecto!, ¿Quieres seguir intentando?", "Sí")
       
       // resultadoSuma.classList.add("incorrect");
     }
