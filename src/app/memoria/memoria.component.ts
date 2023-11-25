@@ -14,6 +14,24 @@ export class MemoriaComponent implements OnInit {
   shuf_emojis = this.emojis.sort(() => (Math.random() > .5) ? 2 : -1);
 
   ngOnInit(): void {
+    this.reload();
+  }
+
+
+  clickEmoji() {
+
+
+  }
+
+  reload(){
+
+    let e = document.getElementsByClassName('item')
+    console.log(e);
+    for (let i = 0; i < e.length; i++) {
+      e[i]
+      console.log(e[i]);
+    }
+
     for (let i: number = 0; i < this.emojis.length; i++) {
       let box = document.createElement('div')
       box.className = 'item';
@@ -53,12 +71,5 @@ export class MemoriaComponent implements OnInit {
       document.querySelector('.game')!.appendChild(box);
     }
   }
-
-
-  clickEmoji() {
-
-
-  }
-
 
 }

@@ -1,12 +1,14 @@
 <div class="container">
     <div class="box" data-color="clr1">
         <div class="imgBx"><img src="assets/signoDificil.png" alt="signo+"></div>
-        <div class="glass" (click)="openDialogMemoria()">
-            <h3>Nivel Final<br><span>???????</span></h3>
-        </div>
-        <ul>
-            <a (click)="openDialogMensajeMemoria()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
-        </ul>
+        <div class="glass">
+            <div class="div" style="width: 100%; background: transparent;" (click)="openDialogMemoria()">
+                <h3>Nivel Final<br><span>???????</span></h3>
+            </div>
+            <ul>
+                <a (click)="openDialogMensajeMemoria()" style="--i:2;"><i class="fa-solid fa-file-word"></i></a>
+            </ul>
+    </div>
     </div>
 </div>
 

@@ -32,13 +32,13 @@ export class NivelFacilComponent {
 
   openDialogMensajeSuma(): void {
     this.dialog.open(MensajeSumaComponent, {
-      width: '70%',
+      width: '50%',
     }); 
   }
 
   openDialogMensajeResta(): void {
     this.dialog.open(MensajeRestaComponent, {
-      width: '70%',
+      width: '50%',
     }); 
   }
 
