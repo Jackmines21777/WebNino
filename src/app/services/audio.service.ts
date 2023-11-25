@@ -12,7 +12,7 @@ export class AudioService {
 
   constructor() {
     this.sound = new Howl({
-      src: [''],
+      src: ['assets/song.mp3'],
       loop: true,
     });
   }

@@ -85,12 +85,12 @@
 
 #numeros:hover .card:hover{
     width: 2.75em;
-    height: 32vh;
+    height: 100vh;
     z-index: 1000;
     background: #f43648;
     margin: 50px;
 }
-
+    
 #numeros{
     position: relative;
     width: 100%;
