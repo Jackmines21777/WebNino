@@ -1,15 +1,19 @@
 <div class="sound-controller">
-    <button class="btn btn-primary" (click)="toggleSound()">
-      {{ audioService.isSoundOn() ? '🔊' : '🔇' }}
-    </button>
-    <input
-      type="range"
-      min="0"
-      max="1"
-      step="0.1"
-      [value]="audioService.getVolume()"
-      (input)="adjustVolume($event)"
-      class="volume-slider"
-    />
-  </div>
-  
+  <button class="btn btn-primary" (click)="toggleSound()">
+    {{ audioService.isSoundOn() ? '🔊' : '🔇' }}
+  </button>
+
+  <button class="btn btn-primary" (click)="prevTrack()">⏮️</button>
+
+  <button class="btn btn-primary" (click)="nextTrack()">⏭️</button>
+
+  <input
+    type="range"
+    min="0"
+    max="1"
+    step="0.1"
+    [value]="audioService.getVolume()"
+    (input)="adjustVolume($event)"
+    class="volume-slider"
+  />
+</div>

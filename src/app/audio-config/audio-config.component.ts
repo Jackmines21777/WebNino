@@ -13,9 +13,16 @@ export class AudioConfigComponent {
     this.audioService.toggle();
   }
 
-  adjustVolume(event: Event) {
-    const target = event.target as HTMLInputElement;
-    const volume = parseFloat(target.value);
-    this.audioService.setVolume(volume);
+  adjustVolume(event: any) {
+    this.audioService.setVolume(event.target.value);
+  }
+
+  prevTrack() {
+    this.audioService.prev();
+  }
+
+  nextTrack() {
+    console.log('Changing to the next track...');
+  this.audioService.next();
   }
 }

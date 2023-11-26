@@ -28,6 +28,8 @@ export class MemoriaComponent implements OnInit {
     // Agrega más operaciones según tus necesidades
   ];
 
+  
+
   shuf_operaciones: any;
 
   constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
