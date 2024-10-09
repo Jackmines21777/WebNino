@@ -66,6 +66,10 @@
     outline: none;
 }
 
+
+.slide .formBx {
+    left: 88%;
+}
 .formBx{
     position: absolute;
     left: 50px;
@@ -82,10 +86,6 @@
     
 }
 
-
-.slide .formBx {
-    left: 28%;
-}
 
 .formBx .form{
     position: absolute;
