@@ -8,6 +8,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    background: #181818;
 }
 .tabs input {
     visibility: hidden;
@@ -16,21 +17,17 @@
 
 
 .buttons {
-    position: sticky;
+    position: absolute;
     width: 100%;
-    top:0;
+    bottom:0;
     z-index: 1;
     display: flex;
-    gap: 80px;
     padding: 30px 40px;
-    border-bottom: (1px solid #121212);
-    background: #121212;
     overflow: hidden;
-    /* border-radius: 20px; */
 }
 
 .buttons label {
-    width: 20%;
+    width: 100%;
     font-size: 1.75em;
     -webkit-text-stroke: 1px #fff;
     color: #121212;
@@ -42,7 +39,7 @@
 
 .buttons label:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+    /* filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff); */
 }
 
 .tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
@@ -52,7 +49,7 @@
 .tabs input:nth-child(5):checked ~ .buttons label:nth-child(5) {
     color: #fff;
     opacity: 1;
-    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+    filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 3px #fff);
    
     left: 50%;
 }
@@ -77,20 +74,20 @@
     height: 100%;
     background: #fff;
     border-radius: 4px;
-    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff) drop-shadow(0 0 30px #fff) drop-shadow(0 0 50px #fff);
+    /* filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff) drop-shadow(0 0 30px #fff) drop-shadow(0 0 50px #fff); */
 }
 
 .underline::after {
     content: '';
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     width: 40px;
     height: 100%;
     background: #fff;
     border-radius: 4px;
-    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff) 
-    drop-shadow(0 0 30px #fff) drop-shadow(0 0 50px #fff) blur(5px);
+    /* filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff) 
+    drop-shadow(0 0 30px #fff) drop-shadow(0 0 50px #fff) blur(5px); */
 }
 
 .tabs input:nth-child(1):checked ~ .buttons .underline{
@@ -122,7 +119,6 @@
     top:0;
     z-index: 1;
     display: flex;
-    gap: 50px;
     border-bottom: (1px solid #121212);
     /* background: #121212; */
     overflow: hidden;
@@ -130,7 +126,6 @@
 }
 
 .buttons label {
-    /* width: 80%; */
     font-size: 1.5em;
     -webkit-text-stroke: 1px #fff;
     color: #121212;
@@ -142,7 +137,7 @@
 
 .buttons label:hover {
     opacity: 1;
-    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+    /* filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff); */
 }
 
 .tabs input:nth-child(1):checked ~ .buttons .underline{

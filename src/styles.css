@@ -1,20 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display-swap');
 
-
-* { 
+*, ::after, ::before { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background: #121212; */
-    font-family: 'Poppins', sans-serif;
-    /* text-align: center; */
-    /* justify-content: center; */
     
 } 
+body {
+    background: #121212;
+}
  
 
 .boxOpen:after,
 .boxMatch:after{
     transform: rotateY(180deg);
 }   
- html, body { height: 100%; } 
- body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
