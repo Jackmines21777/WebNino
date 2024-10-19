@@ -19,7 +19,7 @@ export class MemoriaComponent implements OnInit {
     { operacion: "(10x6)+10", resultado: 70 },
     { operacion: "(100/5)+50", resultado: 70 },
     { operacion: "(9x8)+20", resultado: 92 },
-    { operacion: "(12x4)-44", resultado: 92 },
+    { operacion: "(12x4)+44", resultado: 92 },
     { operacion: "(5x9)+32", resultado: 77 },
     { operacion: "(3x16)+29", resultado: 77 },
     { operacion: "(12x12)-4", resultado: 140 },
